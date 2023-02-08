@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<map_list>
+	<map>
+		<screen version="2.0" scriptcode="java" title="팝업 화면 호출" directory="/POPUP/" screenid="LoadPopup" last_update_date="2023-01-18 09:50:22" width="812" width_type="0" height="500" height_type="0" funclist="btnLoadPopup_on_mouseup"/>
+		<tab_order order_option="0" order_info="4,5,3"/>
+		<text control_id="0" x="48" y="24" right="632" bottom="464" width="132" height="12" text="팝업 화면으로 전달할 값" font="맑은 고딕,9,0,0,0,0" version="1.1"/>
+		<text control_id="1" x="48" y="54" right="608" bottom="434" width="156" height="12" text="팝업 화면으로부터 전달된 값" font="맑은 고딕,9,0,0,0,0" version="1.1"/>
+		<hangul_field control_id="3" name="fldDataFromPopup" x="216" y="48" right="412" bottom="436" width="184" height="16" font="맑은 고딕,9,0,0,0,0"/>
+		<hangul_field control_id="4" name="fldDataToPopup" x="216" y="18" right="412" bottom="466" width="184" height="16" font="맑은 고딕,9,0,0,0,0"/>
+		<pushbutton control_id="5" name="btnLoadPopup" x="432" y="24" right="280" bottom="450" width="100" height="26" text="팝업" font="맑은 고딕,9,0,0,0,0" hover_font="맑은 고딕,9,0,0,0,0" version="1.1" on_mouseup="eventfunc:btnLoadPopup_on_mouseup(objInst)"/>
+	</map>
+</map_list>

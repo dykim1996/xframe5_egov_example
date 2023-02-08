@@ -1,0 +1,29 @@
+﻿#id=my_style
+#comment=
+#component=grid_header
+gradient_effect1gradient_startcolor00FFFF57gradient_endcolor000E82FFimage/tree_open.gif
+#id=Btn_Error
+#comment=Btn Error Descriptiion
+#component=pushbutton
+width60texterroron_mouseupeventfunc:btn_error_on_mouseup(objInst)
+
+#id=NumberField
+#comment=NumberField Description
+#component=numericex_field
+meta_maxlengthmousehover_forecolor00FF0000
+
+#id=Basic Panel
+#comment=
+#component=panel
+width150height160
+
+#id=Btn_Red
+#comment=
+#component=pushbutton
+fore_color000000C4
+
+#id=btn_dowm199
+#comment=
+#component=pushbutton
+width45height37font맑은 고딕,9,0,0,0,0border4textimage_normal/NH_LIFE/btn_arrow_bottom.pngimagesize2
+

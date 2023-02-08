@@ -1,0 +1,103 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<TITLE>xFrame Help Document</TITLE>
+<META http-equiv="Content-Type" content="text/html; charset=ks_c_5601-1987">
+<META http-equiv="MSThemeCompatible" content="yes">
+<STYLE>
+BODY {
+	FONT-SIZE: 12px;
+	FONT-FAMILY: gulim;
+	margin: 10px;
+}
+.tit {
+		background-color: #c5b5ff; color: #ffffff; font-size:14px; font-weight: bold; padding:5px; width:150px; border-radius:5px; text-align: center;
+		background: #768EFF; /* For browsers that do not support gradients */    
+    background: -webkit-linear-gradient(left top, #c5b5ff, #76baff); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(bottom right, #c5b5ff, #76baff); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(bottom right, #c5b5ff, #76baff); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to bottom right, #c5b5ff, #76baff); /* Standard syntax (must be last) */
+    margin-top: 12px;
+    }
+.ver {color: #2792ff; padding: 10 0 0 5px;}
+ol {
+	margin: 0px;
+	padding: 0 0 0 25px;
+	line-height: 24px;
+}
+ul {
+	margin: 0px;
+	padding: 0 0 0 25px;
+	line-height: 24px;
+	list-style: disc;
+	/*color: #4c2f94;*/
+}	
+</STYLE>
+</HEAD>
+<BODY>
+	<div class="tit">Update Info</div>
+
+	<P class="ver"><STRONG>xexcel5_316-1.0.3-20201021.062303-6</STRONG> - 2020.10.21 </P>
+		<UL>
+			<LI> XLS 엑셀 업로드시 CELL 서식이 일반서식이고 Number 데이타일경우 Date로 인식되어 변환되는 오류수정. </LI>
+			<LI> XLS 엑셀 업로드시 첫번재 행이 업로드되지 않는 오류 수정. </LI>
+		</UL>	
+
+	<P class="ver"><STRONG>xexcel5_316-1.0.3-20201005.035305-5</STRONG> - 2020.10.05 </P>
+		<UL>
+			<LI> 엑셀 업로드시 엑셀파일의 CELL 서식이 DATE 타입일경우 YYYYMMDD 포맷으로 데이터 변환하여 업로드 처리. </LI>
+			<LI> 엑셀 업로드시 DRM 처리용 클래스 지정 기능 추가. 96_xFrame5_Excel_Guide.pdf 문서 참조 </LI>
+		</UL>	
+
+	<P class="ver"><STRONG>xexcel5_316-1.0.3-20200911.090736-4</STRONG> - 2020.09.11 </P>
+		<UL>
+			<LI> 엑셀 다운로드 시 타이틀 지정 기능 추가.  
+				<br/>관련 API : setexceltitletext, setexceltitlealign, setexceltitlecolor, setexceltitlefont
+			</LI>
+			<LI> 엑셀 다운로드시 숫자타입이고 패턴이 없을때 비정상 패턴적용 오류 수정.</LI>
+			<LI> 엑셀 다운로드시 숫자타입일때 pattern이 없고 pattern_front_symbol이 지정되어 있을경우 값이 표기안되는 오류 수정.</LI>
+		</UL>	
+
+	<P class="ver"><STRONG>xexcel5_316-1.0.3-20200828.053448-3</STRONG> - 2020.08.28 </P>
+		<UL>
+			<LI> 엑셀 업로드시 엑셀 파일 컬럼에 데이터가 없는 공백일 경우 에러가 발생하는 현상 수정.</LI>
+			<LI> 엑셀 다운로드시 그리드 데이터행에 병합정보가 있을경우 병합하여 처리하는 기능 추가.  
+				<br/>xframe5.js 실행파라미터 설정 필요 * GRID_EXCELDOWNLOAD_ITEMMERGE : true (기본값: false) 
+			</LI>
+			<LI> 엑셀 다운로드시 처리속도 개선.</LI>
+			<LI> 엑셀 다운로드시 개별 아이템 속성 적용을 선택하면 컬럼에 지정한 폰트 및 폰트 컬러가 정상적으로 적용되지 않는 문제 수정.</LI>
+			<LI> 엑셀 다운로드시 컬럼에 폰트를 지정하면 옵션여부에 상관없이 굵게 표기되던 문제 수정.</LI>
+			<LI> 엑셀 다운로드시 개별 아이템 패턴 적용 기능 추가.</LI>
+			<LI> 엑셀 다운로드시 패턴을 ZZZ,ZZZ.ZZ 으로 지정하고 그리드 데이터 값이 0.1 일때 0 이 표기안되는 오류 수정.</LI>
+			<LI> 엑셀 다운로드시 패턴을 ZZZ,ZZZ.ZZ 으로 지정하고 데이터에 소숫점 데이터가 없는경우에도 데이터 뒤에 .이 표기되는 오류 수정.</LI>
+			<LI> 엑셀 다운로드시 pattern_real_symbol 값이 % 일때 데이터 값이 백분률로 변환되어 *100 이 되는 현상으로 데이터 값 보정처리.</LI>
+			<LI> XLS 형식으로 엑셀 다운로드시에서 엑셀 row 가 65535 이상일경우 신규 시트에 데이터를 기록하는 기능 추가 </LI>
+		</UL>	
+
+	<P class="ver"><STRONG>xexcel5-3.16.1</STRONG> - 2020.05.15 </P>
+	<UL>
+		<LI> 릴리즈 버전 업데이트 </LI>
+		<LI> xexcel5-3.16-20200512.043536-8 버전까지 적용 </LI>
+	</UL>
+
+	<P class="ver"><STRONG>xexcel5-3.16-20200512.043536-8</STRONG></P>
+	<UL>
+		<LI>엑셀 다운로드시 크롬브라우저에서 한글 파일명 깨지는 현상 수정 </LI>
+	</UL>
+
+	<P class="ver"><STRONG>xexcel5-3.16-20200330.030809-7</STRONG></P>
+	<UL>
+		<LI>엑셀 다운로드시 아이템별 스타일 옵션을 체크하고 다운로드할때 폰트정보가 없을경우 정상적으로 폰트가 적용안되는 현상 수정 </LI>
+		<LI>엑셀다운로드 폰트 적용 순서 : API 적용폰트(setitemfont(), setitemforecolor()) > 그리드 컬럼 데이터열 font 프로퍼티 > 그리드 font 프로퍼티 적용 폰트</LI>
+	</UL>
+
+
+	<P class="ver"><STRONG>xexcel5-3.16-20200317.040529-6</STRONG></P>
+	<UL>
+		<LI>다중 그리드 환경에서 아이템별 스타일 지정하고 엑셀 다운로드시 중복으로 적용되는 현상 수정 </LI>
+	</UL>
+
+
+
+</BODY>
+</HTML>

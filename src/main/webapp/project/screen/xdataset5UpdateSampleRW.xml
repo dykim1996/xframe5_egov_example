@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<map_list>
+	<map>
+		<screen version="2.0" scriptcode="java" title="반응형샘플" screenid="xdataset5UpdateSampleRW" screen_capture="0" last_update_date="2023-01-17 16:45:18" width="800" width_type="2" height="700" height_type="2" canvas_width="1400" canvas_height="1600" on_submitcomplete="eventfunc:screen_on_submitcomplete(mapid, result, recv_userheader, recv_code, recv_msg)" funclist="screen_on_submitcomplete,btn_search_on_mouseup,btn_updateUtil_on_mouseup,btn_insert_on_mouseup,btn_delete_on_mouseup,fldEmpAge_on_keydown"/>
+		<xlinkdataset id="DS_REQ" desc="조회용" columns="EMP_NO:&quot;직원번호&quot;:6:&quot;&#x0A;&quot;:;EMP_NAME:&quot;직원이름&quot;:20::;EMP_AGE:&quot;직원나이&quot;:10::"/>
+		<xlinkdataset id="DS_RES" desc="직원정보" columns="EMP_NO:&quot;직원번호&quot;:6::;EMP_NAME:&quot;직원이름&quot;:20::;EMP_AGE:&quot;직원나이&quot;:10::;DEPT_CODE:&quot;부서코드&quot;:2::;TITLE_CODE:&quot;직급코드&quot;:2::;MAIL_ADDR:&quot;메일주소&quot;:100::;PROCESS_RESULT:&quot;처리결과&quot;:30::"/>
+		<xlinkdataset id="ds_cboDept" desc="부서정보" columns="dept_code:&quot;부서코드&quot;:2:&quot;01&#x0A;02&#x0A;03&#x0A;04&#x0A;05&#x0A;&quot;:;dept_name:&quot;부서이름&quot;:29:&quot;총무부&#x0A;기획부&#x0A;재무부&#x0A;영업부&#x0A;구매부&#x0A;&quot;:"/>
+		<xlinkdataset id="ds_cboPoi" desc="직책정보" columns="title_code:&quot;직책코드&quot;:2:&quot;01&#x0A;02&#x0A;03&#x0A;04&#x0A;05&#x0A;&quot;:;title_name:&quot;직책이름&quot;:30:&quot;사원&#x0A;대리&#x0A;과장&#x0A;차장&#x0A;부장&#x0A;&quot;:"/>
+		<xlinktranmap id="TR_SELECT" url="sample/selectView.do" comment="조회">
+			<xtds id="DS_REQ" in_op="ALL" out_op="" info="EMP_NO:1:;EMP_NAME:1:;EMP_AGE:1:"/>
+			<xtds id="DS_RES" in_op="" out_op="DELETE" info="EMP_NO::1;EMP_NAME::1;EMP_AGE::1;DEPT_CODE::1;TITLE_CODE::1;MAIL_ADDR::1;PROCESS_RESULT::"/>
+		</xlinktranmap>
+		<xlinktranmap id="TR_UPDATE_UTIL" url="sample/updateView.do" comment="업데이트(유틸사용)">
+			<xtds id="DS_RES" in_op="UPDATE" out_op="" info="EMP_NO:1:;EMP_NAME:1:;EMP_AGE:1:;DEPT_CODE:1:;TITLE_CODE:1:;MAIL_ADDR:1:;PROCESS_RESULT::"/>
+		</xlinktranmap>
+		<rowbox control_id="103" position="1" x="0" y="0" right="0" bottom="22" width="800" width_unit="1" height="678" height_type="0">
+			<rowbox_item colspan="12" padding="10,10,0,0">
+				<rowbox control_id="104" position="1" x="0" y="18" right="0" bottom="624" width="780" width_unit="1" height="36" height_type="0">
+					<rowbox_item colspan="12">
+						<panel control_id="105" semantic_tag="0" position="1" x="0" y="0" right="0" bottom="0" width="780" width_unit="1" height="36" height_unit="1" title_font="맑은 고딕,9,0,0,0,0">
+							<text control_id="106" x="12" y="12" right="718" bottom="10" width="48" height="12" text="고객조회" font="맑은 고딕,9,0,0,0,0" mousehover_font="맑은 고딕,9,0,0,0,0" version="1.1"/>
+						</panel>
+					</rowbox_item>
+				</rowbox>
+				<rowbox control_id="107" position="1" x="0" y="60" right="0" bottom="552" width="780" width_unit="1" height="66" height_type="1">
+					<rowbox_item colspan="3" xs_colspan="6" sm_colspan="3" md_colspan="3" lg_colspan="3">
+						<panel control_id="108" semantic_tag="0" position="1" x="0" y="0" right="0" bottom="12" width="195" width_unit="1" height="54" margin="10,0,0,0" border="0" title_font="맑은 고딕,9,0,0,0,0">
+							<tab_order order_option="0" order_info="76"/>
+							<caption control_id="2" x="0" y="21" right="147" bottom="15" width="48" height="18" text="직원번호" font="굴림체,9,0,0,0,0" transparent="1" mousehover_font="맑은 고딕,9,0,0,0,0" flowline_arr=""/>
+							<numericex_field control_id="76" name="fldEmpNo" autosize="0" x="72" y="16" right="23" bottom="12" width="100" height="26" resize_dir="1" font="맑은 고딕,9,0,0,0,0" link_data="DS_REQ:EMP_NO" max_length="30" on_keydown="eventfunc:fldEmpAge_on_keydown(objInst, keycode, bctrldown, bshiftdown, baltdown, bnumpadkey)"/>
+						</panel>
+					</rowbox_item>
+					<rowbox_item colspan="3" xs_colspan="6" sm_colspan="3" md_colspan="3" lg_colspan="3">
+						<panel control_id="109" semantic_tag="0" position="1" x="0" y="0" right="0" bottom="12" width="195" width_unit="1" height="54" margin="10,0,0,0" border="0" title_font="맑은 고딕,9,0,0,0,0">
+							<tab_order order_option="0" order_info="89"/>
+							<caption control_id="88" x="0" y="21" right="147" bottom="15" width="48" height="18" text="직원이름" font="굴림체,9,0,0,0,0" transparent="1" mousehover_font="맑은 고딕,9,0,0,0,0" flowline_arr=""/>
+							<hangul_field control_id="89" name="fldEmpName" autosize="0" x="72" y="16" right="23" bottom="12" width="100" height="26" resize_dir="1" font="맑은 고딕,9,0,0,0,0" link_data="DS_REQ:EMP_NAME" on_keydown="eventfunc:fldEmpAge_on_keydown(objInst, keycode, bctrldown, bshiftdown, baltdown, bnumpadkey)"/>
+						</panel>
+					</rowbox_item>
+					<rowbox_item colspan="3" xs_colspan="6" sm_colspan="3" md_colspan="3" lg_colspan="3">
+						<panel control_id="110" semantic_tag="0" position="1" x="0" y="0" right="0" bottom="12" width="195" width_unit="1" height="54" margin="10,0,0,0" border="0" title_font="맑은 고딕,9,0,0,0,0">
+							<tab_order order_option="0" order_info="91,78"/>
+							<caption control_id="90" x="0" y="21" right="147" bottom="15" width="48" height="18" text="직원나이" font="굴림체,9,0,0,0,0" transparent="1" mousehover_font="맑은 고딕,9,0,0,0,0" flowline_arr=""/>
+							<numericex_field control_id="91" name="fldEmpAge" autosize="0" x="72" y="16" right="23" bottom="12" width="100" height="26" resize_dir="1" font="맑은 고딕,9,0,0,0,0" link_data="DS_REQ:EMP_AGE" max_length="30" on_keydown="eventfunc:fldEmpAge_on_keydown(objInst, keycode, bctrldown, bshiftdown, baltdown, bnumpadkey)"/>
+							<pushbutton control_id="78" name="btn_updateUtil" x="105" y="30" right="0" bottom="0" width="90" height="24" style_class="3" text="저장" font="맑은 고딕,10,1,0,0,0" border_color="00C3C3C3" border_radius="6" gradient_endcolor="0057FF57" hover_font="맑은 고딕,9,0,0,0,0" version="1.1"/>
+						</panel>
+					</rowbox_item>
+					<rowbox_item colspan="3" xs_colspan="6" sm_colspan="3" md_colspan="3" lg_colspan="3">
+						<panel control_id="111" semantic_tag="0" position="1" x="0" y="0" right="0" bottom="12" width="195" width_unit="1" height="54" border="0" title_font="맑은 고딕,9,0,0,0,0">
+							<tab_order order_option="0" order_info="69,79,81"/>
+							<pushbutton control_id="69" name="btn_search" x="0" y="15" right="135" bottom="13" width="60" height="26" style_class="2" text="조회" font="굴림체,9,0,0,0,0" back_color="00E1E1E1" border_color="00000000" gradient_endcolor="0057FF57" hover_font="맑은 고딕,9,0,0,0,0" version="1.1" on_mouseup="eventfunc:btn_search_on_mouseup(objInst)"/>
+							<pushbutton control_id="79" name="btn_insert" x="66" y="15" right="69" bottom="13" width="60" height="26" style_class="3" text="추가" font="굴림체,9,0,0,0,0" back_color="00E1E1E1" border_color="00000000" gradient_endcolor="0057FF57" hover_font="맑은 고딕,9,0,0,0,0" version="1.1" on_mouseup="eventfunc:btn_insert_on_mouseup(objInst)"/>
+							<pushbutton control_id="81" name="btn_delete" x="132" y="15" right="3" bottom="13" width="60" height="26" style_class="6" text="삭제" font="굴림체,9,0,0,0,0" back_color="00E1E1E1" border_color="00000000" gradient_endcolor="0057FF57" hover_font="맑은 고딕,9,0,0,0,0" version="1.1" on_mouseup="eventfunc:btn_delete_on_mouseup(objInst)"/>
+						</panel>
+					</rowbox_item>
+				</rowbox>
+				<rowbox control_id="112" position="1" x="0" y="138" right="0" bottom="270" width="780" width_unit="1" height="270" height_type="0">
+					<rowbox_item colspan="12">
+						<grid control_id="87" name="grid" description="직원정보" position="1" x="0" y="0" right="0" bottom="20" width="780" width_unit="1" height="250" font="맑은 고딕,9,0,0,0,0" header_font="맑은 고딕,9,0,0,0,0" header_vertcount="0" header_height="25" cell_height="20" selectrow_font="굴림체,9,0,0,0,0" selectcell_font="굴림체,9,0,0,0,0" linenumber_show="1" use_checkrow="1" multi_checkrow="1" link_data="DS_RES" autocolumnwidth="1" version="1.2" rwd_width="760">
+							<column>
+								<header title="직원번호"/>
+								<data name="EMP_NO" description="직원번호" width="54" editable="1" max_length="6" link_data="DS_RES:EMP_NO" combobox_buttonsize="15" bargauge_transparent="0"/>
+							</column>
+							<column>
+								<header title="직원이름"/>
+								<data name="EMP_NAME" description="직원이름" width="128" editable="1" data_type="2" max_length="20" link_data="DS_RES:EMP_NAME" combobox_buttonsize="15" bargauge_transparent="0"/>
+							</column>
+							<column>
+								<header title="직원나이"/>
+								<data name="EMP_AGE" description="직원나이" width="68" editable="1" max_length="10" link_data="DS_RES:EMP_AGE" combobox_buttonsize="15" bargauge_transparent="0"/>
+							</column>
+							<column>
+								<header title="부서코드"/>
+								<data name="DEPT_CODE" description="부서코드" width="54" editable="1" max_length="2" link_data="DS_RES:DEPT_CODE" combobox_buttonsize="15" bargauge_transparent="0"/>
+							</column>
+							<column>
+								<header title="직급코드"/>
+								<data name="TITLE_CODE" description="직급코드" width="54" editable="1" max_length="2" link_data="DS_RES:TITLE_CODE" combobox_buttonsize="15" bargauge_transparent="0"/>
+							</column>
+							<column>
+								<header title="메일주소"/>
+								<data name="MAIL_ADDR" description="메일주소" width="288" editable="1" max_length="100" link_data="DS_RES:MAIL_ADDR" combobox_buttonsize="15" bargauge_transparent="0"/>
+							</column>
+							<column>
+								<header title="처리결과"/>
+								<data name="PROCESS_RESULT" description="처리결과" width="195" editable="1" max_length="30" link_data="DS_RES:PROCESS_RESULT" combobox_buttonsize="15" bargauge_transparent="0"/>
+							</column>
+							<headermegeinfo info=""/>
+						</grid>
+					</rowbox_item>
+				</rowbox>
+				<rowbox control_id="128" position="1" x="0" y="414" right="0" bottom="186" width="780" width_unit="1" height="78" height_type="1">
+					<rowbox_item colspan="3" xs_colspan="6" sm_colspan="3" md_colspan="3" lg_colspan="3">
+						<panel control_id="129" semantic_tag="0" position="1" x="0" y="0" right="0" bottom="18" width="195" width_unit="1" height="60" margin="10,0,0,0" border="0" title_font="맑은 고딕,9,0,0,0,0">
+							<tab_order order_option="0" order_info="46,50"/>
+							<caption control_id="45" x="0" y="0" right="147" bottom="42" width="48" height="18" text="직원번호" font="굴림체,9,0,0,0,0" transparent="1" mousehover_font="맑은 고딕,9,0,0,0,0" flowline_arr=""/>
+							<normal_field control_id="46" description="직원번호" autosize="0" x="72" y="0" right="23" bottom="36" width="100" height="24" resize_dir="1" font="굴림체,9,0,0,0,0" link_data="DS_RES:EMP_NO" max_length="6"/>
+							<text control_id="28" x="0" y="36" right="147" bottom="6" width="48" height="18" text="직원나이" font="굴림체,9,0,0,0,0" mousehover_font="맑은 고딕,9,0,0,0,0" version="1.1"/>
+							<normal_field control_id="50" description="직원나이" autosize="0" x="72" y="30" right="23" bottom="6" width="100" height="24" resize_dir="1" font="굴림체,9,0,0,0,0" link_data="DS_RES:EMP_AGE" max_length="10"/>
+						</panel>
+					</rowbox_item>
+					<rowbox_item colspan="3" xs_colspan="6" sm_colspan="3" md_colspan="3" lg_colspan="3">
+						<panel control_id="130" semantic_tag="0" position="1" x="0" y="0" right="0" bottom="18" width="195" width_unit="1" height="60" margin="10,0,0,0" border="0" title_font="맑은 고딕,9,0,0,0,0">
+							<tab_order order_option="0" order_info="14,52"/>
+							<text control_id="12" x="0" y="0" right="147" bottom="42" width="48" height="18" text="직원부서" font="굴림체,9,0,0,0,0" mousehover_font="맑은 고딕,9,0,0,0,0" version="1.1"/>
+							<combobox control_id="14" name="combo_dep" autosize="0" x="78" y="0" right="17" bottom="36" width="100" height="24" resize_dir="1" font="굴림체,9,0,0,0,0" picklist_linkdata="ds_cboDept:dept_code:dept_name:" link_data="DS_RES:DEPT_CODE" input_type="1" picklist_font="굴림체,9,0,0,0,0" picklist_selstyle="1" version="1.1"/>
+							<text control_id="31" x="0" y="36" right="147" bottom="6" width="48" height="18" text="메일주소" font="굴림체,9,0,0,0,0" mousehover_font="맑은 고딕,9,0,0,0,0" version="1.1"/>
+							<normal_field control_id="52" description="메일주소" autosize="0" x="78" y="30" right="17" bottom="6" width="100" height="24" resize_dir="1" font="굴림체,9,0,0,0,0" link_data="DS_RES:MAIL_ADDR" max_length="100"/>
+						</panel>
+					</rowbox_item>
+					<rowbox_item colspan="3" xs_colspan="6" sm_colspan="3" md_colspan="3" lg_colspan="3">
+						<panel control_id="131" semantic_tag="0" position="1" x="0" y="0" right="0" bottom="18" width="195" width_unit="1" height="60" margin="10,0,0,0" border="0" title_font="맑은 고딕,9,0,0,0,0">
+							<tab_order order_option="0" order_info="54"/>
+							<caption control_id="53" x="0" y="0" right="147" bottom="42" width="48" height="18" text="직원이름" font="굴림체,9,0,0,0,0" transparent="1" mousehover_font="맑은 고딕,9,0,0,0,0" flowline_arr=""/>
+							<hangul_field control_id="54" description="직원이름" autosize="0" x="72" y="0" right="23" bottom="36" width="100" height="24" resize_dir="1" font="굴림체,9,0,0,0,0" link_data="DS_RES:EMP_NAME" max_length="20"/>
+						</panel>
+					</rowbox_item>
+					<rowbox_item colspan="3" xs_colspan="6" sm_colspan="3" md_colspan="3" lg_colspan="3">
+						<panel control_id="132" semantic_tag="0" position="1" x="0" y="0" right="0" bottom="18" width="195" width_unit="1" height="60" margin="10,0,0,0" border="0" title_font="맑은 고딕,9,0,0,0,0">
+							<tab_order order_option="0" order_info="15"/>
+							<text control_id="13" x="0" y="0" right="147" bottom="42" width="48" height="18" text="직원직책" font="굴림체,9,0,0,0,0" mousehover_font="맑은 고딕,9,0,0,0,0" version="1.1"/>
+							<combobox control_id="15" autosize="0" x="78" y="0" right="17" bottom="36" width="100" height="24" resize_dir="1" font="굴림체,9,0,0,0,0" picklist_linkdata="ds_cboPoi:title_code:title_name:" link_data="DS_RES:TITLE_CODE" input_type="1" picklist_font="굴림체,9,0,0,0,0" picklist_selstyle="1" version="1.1"/>
+						</panel>
+					</rowbox_item>
+				</rowbox>
+				<rowbox control_id="150" position="1" x="0" y="510" right="0" bottom="132" width="780" width_unit="1" height="36" height_type="0">
+					<rowbox_item colspan="3" xs_colspan="6" sm_colspan="3" md_colspan="3" lg_colspan="3">
+						<panel control_id="151" semantic_tag="0" position="1" x="0" y="0" right="0" bottom="6" width="195" width_unit="1" height="30" margin="10,0,0,0" border="0" title_font="맑은 고딕,9,0,0,0,0">
+							<tab_order order_option="0" order_info="18"/>
+							<text control_id="17" x="0" y="0" right="165" bottom="12" width="30" height="18" text="mapid" font="굴림체,9,0,0,0,0" mousehover_font="맑은 고딕,9,0,0,0,0" version="1.1"/>
+							<hangul_field control_id="18" name="fldMapId" autosize="0" x="72" y="0" right="23" bottom="6" width="100" height="24" resize_dir="1" font="굴림체,9,0,0,0,0" input_type="2"/>
+						</panel>
+					</rowbox_item>
+					<rowbox_item colspan="3" xs_colspan="6" sm_colspan="3" md_colspan="3" lg_colspan="3">
+						<panel control_id="156" semantic_tag="0" position="1" x="0" y="0" right="0" bottom="6" width="195" width_unit="1" height="30" margin="10,0,0,0" border="0" title_font="맑은 고딕,9,0,0,0,0">
+							<tab_order order_option="0" order_info="20"/>
+							<text control_id="36" x="0" y="0" right="141" bottom="12" width="54" height="18" text="recv_code" font="굴림체,9,0,0,0,0" mousehover_font="맑은 고딕,9,0,0,0,0" version="1.1"/>
+							<hangul_field control_id="20" name="fldRecvCode" autosize="0" x="78" y="0" right="17" bottom="6" width="100" height="24" resize_dir="1" font="굴림체,9,0,0,0,0" input_type="2"/>
+						</panel>
+					</rowbox_item>
+					<rowbox_item colspan="3" xs_colspan="6" sm_colspan="3" md_colspan="3" lg_colspan="3">
+						<panel control_id="161" semantic_tag="0" position="1" x="0" y="0" right="0" bottom="6" width="195" width_unit="1" height="30" margin="10,0,0,0" border="0" title_font="맑은 고딕,9,0,0,0,0">
+							<tab_order order_option="0" order_info="19"/>
+							<text control_id="35" x="0" y="0" right="159" bottom="12" width="36" height="18" text="result" font="굴림체,9,0,0,0,0" mousehover_font="맑은 고딕,9,0,0,0,0" version="1.1"/>
+							<hangul_field control_id="19" name="fldResult" autosize="0" x="72" y="0" right="23" bottom="6" width="100" height="24" resize_dir="1" font="굴림체,9,0,0,0,0" input_type="2"/>
+						</panel>
+					</rowbox_item>
+					<rowbox_item colspan="3" xs_colspan="6" sm_colspan="3" md_colspan="3" lg_colspan="3">
+						<panel control_id="164" semantic_tag="0" position="1" x="0" y="0" right="0" bottom="6" width="195" width_unit="1" height="30" margin="10,0,0,0" border="0" title_font="맑은 고딕,9,0,0,0,0">
+							<tab_order order_option="0" order_info="75"/>
+							<text control_id="74" x="0" y="0" right="135" bottom="12" width="60" height="18" text="userheader" font="굴림체,9,0,0,0,0" mousehover_font="맑은 고딕,9,0,0,0,0" version="1.1"/>
+							<hangul_field control_id="75" name="fldUserHeader" autosize="0" x="78" y="0" right="17" bottom="6" width="100" height="24" resize_dir="1" font="굴림체,9,0,0,0,0" input_type="2"/>
+						</panel>
+					</rowbox_item>
+				</rowbox>
+				<rowbox control_id="168" position="1" x="0" y="558" right="0" bottom="0" width="780" width_unit="1" height="120" height_type="0">
+					<rowbox_item colspan="12">
+						<panel control_id="169" semantic_tag="0" x="0" y="0" right="0" bottom="0" width="780" width_unit="1" height="120" height_unit="1" border="0" title_font="맑은 고딕,9,0,0,0,0">
+							<tab_order order_option="0" order_info="21"/>
+							<text control_id="37" x="0" y="6" right="732" bottom="96" width="48" height="18" text="recv_msg" font="굴림체,9,0,0,0,0" mousehover_font="맑은 고딕,9,0,0,0,0" version="1.1"/>
+							<multiline control_id="21" name="mulRecvMsg" x="0" y="24" right="0" bottom="12" width="780" height="84" height_percent="70" resize_dir="1" font="굴림체,9,0,0,0,0" line_gap="0" max_length="200" meta_maxlength="" input_type="2" escape_newline="0"/>
+						</panel>
+					</rowbox_item>
+				</rowbox>
+			</rowbox_item>
+		</rowbox>
+	</map>
+</map_list>

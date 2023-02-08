@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<map_list>
+	<map>
+		<screen version="2.0" scriptcode="java" title="팝업" directory="/POPUP/" screenid="Popup" last_update_date="2023-01-18 09:52:06" width="400" width_type="0" height="120" height_type="0" on_load="eventfunc:screen_on_load()" funclist="btnOk_on_mouseup,btnCancel_on_mouseup,screen_on_load"/>
+		<tab_order order_option="0" order_info="2,4,5,6"/>
+		<text control_id="0" x="30" y="30" right="238" bottom="78" width="132" height="12" text="팝업 화면으로 전달된 값" font="맑은 고딕,9,0,0,0,0" version="1.1"/>
+		<hangul_field control_id="2" name="fldDataFromScreen" x="180" y="28" right="36" bottom="76" width="184" height="16" font="맑은 고딕,9,0,0,0,0"/>
+		<text control_id="3" x="30" y="60" right="238" bottom="48" width="132" height="12" text="팝업 화면에서 전달할 값" font="맑은 고딕,9,0,0,0,0" version="1.1"/>
+		<hangul_field control_id="4" name="fldDataToScreen" x="180" y="58" right="36" bottom="46" width="184" height="16" font="맑은 고딕,9,0,0,0,0"/>
+		<pushbutton control_id="5" name="btnOk" x="96" y="90" right="204" bottom="4" width="100" height="26" text="확인" font="맑은 고딕,9,0,0,0,0" hover_font="맑은 고딕,9,0,0,0,0" version="1.1" on_mouseup="eventfunc:btnOk_on_mouseup(objInst)"/>
+		<pushbutton control_id="6" name="btnCancel" x="228" y="90" right="72" bottom="4" width="100" height="26" text="취소" font="맑은 고딕,9,0,0,0,0" hover_font="맑은 고딕,9,0,0,0,0" version="1.1" on_mouseup="eventfunc:btnCancel_on_mouseup(objInst)"/>
+	</map>
+</map_list>

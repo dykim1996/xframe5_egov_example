@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" type="text/css" href="./xf_map.css" />
+
+    <script type="text/javascript" src="../ext/lib/jquery-2.1.4.min.js"></script>
+
+    <script type="text/javascript" src="./xf_map.js"></script>
+
+    <!--
+    키 발급
+    1. URL 접속 : http://developer.naver.com/ -> 상단 '오픈 API' 메뉴 선택
+    2. Login : Naver ID로 로그인
+    3. '키 발급/관리' 버튼 클릭
+    4. 지도 API '키 추가' 버튼 클릭
+    -->
+    <!--
+    <script src="http://openapi.map.naver.com/openapi/naverMap.naver?ver=2.0&key=b0cebf9c7485f3a0d85a07171a0f4535"></script>
+    -->
+
+    <!-- mjhong8682@naver.com user key -->
+    <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=ya3uy3fbc0"></script>
+    <script type="text/javascript">
+        // alert(location.href);
+
+        // call by external xf_map component
+        function create_map(xf_parent_map) {
+            return new XF_MAP(xf_parent_map);
+        }
+    </script>
+  	<title>MAP</title>
+</head>
+<body>
+    <div id="xf_map" class="_xf_map">
+    </div>
+</body>
+</html>

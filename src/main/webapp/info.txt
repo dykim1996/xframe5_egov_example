@@ -1,0 +1,48 @@
+[시작 경로]
+http://localhost:8080/xframe5_egov3.6/index.jsp
+or http://localhost:8080/xframe5_egov3.6/xframe5.do
+
+[프로젝트 환경]
+egovframework 3.6.0 적용
+springframework 4.3.16 적용
+maven 적용
+xexcel 3.16 적용
+poi 3.16 적용
+jdk 1.7 
+tomcat 7.0
+
+[프로젝트 설치]
+1. C:드라이브에 AppRoot 폴더를 생성
+2. xFrame5_egov.zip 파일 압축 해제
+3 C:\AppRoot\xFrame5_egov\egov_3.6_eclipse 바로가기 실행(링크 원본 주소 C:\AppRoot\xFrame5_egov\eclipse\eclipse.exe)
+
+
+[프로젝트 디렉터리 구성]
+- AppRoot/xFrame5_egov
+	eclipse		: 전자정부 표준프레임워크 3.6 
+	java		: jdk 1.7(32bit), 1.8(32/64bit)
+	repository	: maven repository
+	was			: apache tomcat 7.0, 8.5, 9.0
+	workspace	: project
+	
+
+[프로젝트 설정 파일]
+- src/main/java
+	xframework.com.controller.ViewXDataSet5Contoller.java	: request 요청 처리
+	xframework.com.service.*	: 서비스 처리 클래스
+
+- src/main/resources
+	db/sampledb.sql	: 메모리 DB 사용시 SQL TABLE 정보
+	egovframework/spring/context-datasource.xml	: dataSource 정보 설정
+	sqlmap/xframe/sql-mapper-config.xml	: SQL 맵퍼 설정
+	sqlmap/xframe/mappers/**	: SQL 맵퍼
+	log4j2.xml	: 로그 설정
+	
+- src/main/webapp	
+	index.jsp
+	index.js
+	xframe5.css
+	
+- pom.xml	: maven 설정
+	
+	

@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<map_list>
+	<map>
+		<screen version="2.0" scriptcode="java" title="메뉴" directory="/MENU/" screenid="Menu" last_update_date="2023-01-18 11:01:29" width="110" width_type="0" height="56" height_type="0" back_color="00D2E7EF" funclist="btnMenu1_on_mouseup,btnMenu2_on_mouseup,loadScreen"/>
+		<hidden_screen>
+			<pushbutton control_id="1" name="tabScreen" x="110" y="132" right="1414" bottom="842" width="100" height="26" text="Load Popup" font="맑은 고딕,9,0,0,0,0" back_color="00FFA0CF" hover_font="맑은 고딕,9,0,0,0,0" version="1.1"/>
+			<pushbutton control_id="0" name="btnMenu1" x="110" y="86" right="1414" bottom="888" width="100" height="26" text="Say Hello" font="맑은 고딕,9,0,0,0,0" back_color="00FFA0CF" hover_font="맑은 고딕,9,0,0,0,0" version="1.1"/>
+		</hidden_screen>
+	</map>
+</map_list>

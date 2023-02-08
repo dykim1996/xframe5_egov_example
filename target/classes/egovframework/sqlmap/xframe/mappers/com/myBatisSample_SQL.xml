@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="sampleMapper">
+
+	<select id="selectList" resultType="Map">
+	SELECT
+			emp_no, emp_name, emp_gender, emp_addr, emp_email, emp_birth, emp_phone, emp_delete
+		FROM 
+			emp_info
+		WHERE 1=1
+		ORDER BY 
+			emp_no
+	</select>
+	
+	<select id="selectDetail" parameterType="String" resultType="Map">
+	SELECT
+			emp_no, emp_name, emp_gender, emp_addr, emp_email, emp_birth, emp_phone, emp_delete
+		FROM 
+			emp_info
+		WHERE emp_no = #{emp_no}
+		ORDER BY 
+			emp_no
+	</select>
+	
+		<select id="selectMapListByStr" parameterType="String" resultType="Map">
+		SELECT
+			EMP_NAME, EMP_NO, EMP_AGE, DEPT_CODE, TITLE_CODE, MAIL_ADDR
+		FROM 
+			EMP_INFO
+		WHERE 1=1
+		
+		<if test="_parameter != null and _parameter != ''">
+			AND EMP_NAME LIKE '%' || #{_parameter} || '%'
+		</if>
+		
+		ORDER BY 
+			EMP_AGE ASC
+	</select>
+	
+	
+	<select id="searchMapListByStr" parameterType="String" resultType="Map">
+		SELECT
+			emp_no, emp_name, emp_gender, emp_addr, emp_email, emp_birth, emp_phone, emp_delete
+		FROM 
+			emp_info
+		WHERE 1=1
+			AND emp_name LIKE CONCAT('%', #{emp_name},'%')
+		ORDER BY 
+			emp_no ASC
+	</select>
+	
+	<select id="selectMapListByMap" parameterType="Map" resultType="Map">
+		SELECT
+			EMP_NAME, EMP_NO, EMP_AGE, DEPT_CODE, TITLE_CODE, MAIL_ADDR
+		FROM 
+			EMP_INFO
+		WHERE 1=1
+		
+		<if test="EMP_NO != null and EMP_NO != ''">
+		AND	EMP_NO LIKE '%' || #{EMP_NO} || '%'
+		</if>
+		
+		<if test="EMP_NAME != null and EMP_NAME != ''">
+		AND	EMP_NAME LIKE '%' || #{EMP_NAME} || '%'
+		</if>
+		
+		<if test="EMP_AGE != null and EMP_AGE != ''">
+		AND	EMP_AGE >= #{EMP_AGE}
+		</if>
+		
+		ORDER BY 
+			EMP_AGE ASC
+	</select>
+	
+	<select id="selectVOListByVO" parameterType="exampleVO" resultType="exampleVO">
+		SELECT
+			EMP_NAME, EMP_NO, EMP_AGE, DEPT_CODE, TITLE_CODE, MAIL_ADDR
+		FROM 
+			EMP_INFO
+		WHERE 1=1
+		
+		<if test="EMP_NO != null and EMP_NO != ''">
+		AND	EMP_NO LIKE '%' || #{EMP_NO} || '%'
+		</if>
+		
+		<if test="EMP_NAME != null and EMP_NAME != ''">
+		AND	EMP_NAME LIKE '%' || #{EMP_NAME} || '%'
+		</if>
+		
+		<if test="EMP_AGE != null and EMP_AGE != ''">
+		AND	EMP_AGE >= #{EMP_AGE}
+		</if>
+		
+		ORDER BY 
+			EMP_AGE ASC
+	</select>
+	
+
+	<update id="updateMapListByMap">
+			UPDATE EMP_INFO
+			SET 
+				 emp_name=#{emp_name}
+				, emp_gender=#{emp_gender}
+				, emp_addr=#{emp_addr}
+				, emp_email=#{emp_email}
+				, emp_birth=#{emp_birth}
+				, emp_phone=#{emp_phone}
+				  WHERE emp_no=#{emp_no}
+	</update>	
+	
+	<delete id="deleteMapListByMap">
+			DELETE FROM EMP_INFO
+			WHERE EMP_NO=#{EMP_NO}
+	</delete>
+	
+	
+	<delete id="deleteByStr">
+			DELETE FROM EMP_INFO
+			WHERE EMP_NO=#{EMP_NO}
+	</delete>
+	
+	
+	
+	<insert id="insertMapListByMap">
+			INSERT INTO EMP_INFO ( 
+				  emp_name
+				  , emp_gender
+				  , emp_email
+				  , emp_birth
+				  , emp_phone
+				  , emp_addr
+			 	)
+			VALUES ( 
+					#{emp_name}
+				  , #{emp_gender}
+				  , #{emp_email}
+				  , #{emp_birth}
+				  , #{emp_phone}
+				  , #{emp_addr} 
+				)
+	</insert>
+				
+	<select id="selectLoginData" parameterType="String" resultType="Map">
+	SELECT
+			USER_ID, USER_PWD, USER_NAME
+		FROM 
+			USERS
+		WHERE USER_ID = #{USER_ID} AND USER_PWD = #{USER_PWD}
+	</select>
+	
+</mapper>

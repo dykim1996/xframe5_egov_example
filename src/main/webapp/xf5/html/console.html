@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="pragma" content="no-cache">
+
+    <link rel="stylesheet" type="text/css" href="../css/xf_engine.min.css"/>
+
+    <style>
+        body {
+            margin:0px;
+            padding:0px;
+            font-family:'굴림';
+            font-size:9pt;
+        }
+        table {
+            margin:0px;
+            padding:0px;
+            border-collapse:collapse;
+            border-spacing:0;
+        }
+    </style>
+
+    <script type="text/javascript" src="../ext/lib/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="../lib/xf_engine.min.js"></script>
+    <script type="text/javascript">
+        var xf_console = null;
+        var parent_window = null;
+
+        $(document).ready(function() {
+            xf_console = new XF_CONSOLE(true);
+            xf_console.show(XF_CONSOLE.ATTACH_DIR_FULL);
+
+            if(window.opener === null || $.isEmptyObject(window.opener)) {
+                parent_window = window.parent
+            }
+            else {
+                parent_window = window.opener
+            }
+
+            parent_window.factory.xf_popup_console = xf_console;
+			
+			// 부모화면이 닫혔을때 콘솔트레이스 닫기
+			$(parent_window).on('beforeunload', function(event) {
+				window.close();
+			});
+        });
+    </script>
+    <title>xFrame Console</title>
+</head>
+<body>
+</body>
+</html>
+

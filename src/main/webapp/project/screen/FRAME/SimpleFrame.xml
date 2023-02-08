@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<map_list>
+	<map>
+		<screen version="2.0" scriptcode="java" title="기본 프레임" directory="/FRAME/" screenid="SimpleFrame" last_update_date="2023-01-18 10:41:55" width="860" width_type="0" height="600" height_type="0" funclist="setTitleTextAndTabItemText,btnOpenScreen_on_mouseup,fldScreenUrl_on_keydown,tabScreen_on_itemchange,tabScreen_on_itemdestroy,btnReload_on_mouseup,btnClose_on_mouseup,btnAlign_on_mouseup"/>
+		<tab_order order_option="0" order_info="3,4,5,6,7,2,8"/>
+		<text control_id="0" x="36" y="30" right="755" bottom="558" width="69" height="12" font="맑은 고딕,9,0,0,0,0" version="1.1"/>
+		<text control_id="1" x="156" y="30" right="655" bottom="558" width="49" height="12" text="화면 URL" font="맑은 고딕,9,0,0,0,0" version="1.1"/>
+		<normal_field control_id="2" name="fldScreenUrl" x="56" y="27" right="0" bottom="557" width="804" height="16" font="맑은 고딕,9,0,0,0,0" max_length="100" on_keydown="eventfunc:fldScreenUrl_on_keydown(objInst, keycode, bctrldown, bshiftdown, baltdown, bnumpadkey)"/>
+		<pushbutton control_id="3" name="btnOpenScreen" x="402" y="24" right="398" bottom="558" width="60" height="18" text="열기" font="맑은 고딕,9,0,0,0,0" hover_font="맑은 고딕,9,0,0,0,0" version="1.1" on_click="eventfunc:btnOpenScreen_on_click(objInst)"/>
+		<combobox control_id="4" name="cboAlighType" x="498" y="25" right="295" bottom="559" width="67" height="16" font="맑은 고딕,9,0,0,0,0" default_value="0" editable="0" combobox_data="del=&apos;:&apos; pos=&apos;0&apos; style=&apos;1&apos; content=&apos;0:기본&#x0D;&#x0A;1:수직&#x0D;&#x0A;2:수평&#x0D;&#x0A;3:계단식&apos;" picklist_font="맑은 고딕,9,0,0,0,0" picklist_selstyle="1" version="1.1"/>
+		<pushbutton control_id="5" name="btnAlign" x="588" y="25" right="206" bottom="555" width="66" height="20" text="정렬" font="맑은 고딕,9,0,0,0,0" hover_font="맑은 고딕,9,0,0,0,0" version="1.1" on_mouseup="eventfunc:btnAlign_on_mouseup(objInst)"/>
+		<pushbutton control_id="6" name="btnReload" x="678" y="25" right="116" bottom="555" width="66" height="20" text="Reload" font="맑은 고딕,9,0,0,0,0" hover_font="맑은 고딕,9,0,0,0,0" version="1.1" on_mouseup="eventfunc:btnReload_on_mouseup(objInst)"/>
+		<pushbutton control_id="7" name="btnClose" x="768" y="25" right="20" bottom="555" width="72" height="20" text="닫기" font="맑은 고딕,9,0,0,0,0" hover_font="맑은 고딕,9,0,0,0,0" version="1.1" on_mouseup="eventfunc:btnClose_on_mouseup(objInst)"/>
+		<tab control_id="8" name="tabScreen" x="33" y="72" right="29" bottom="18" width="798" height="510" tabitem_position="1" tabitem_font="맑은 고딕,9,0,0,0,0" tabitem_selfont="맑은 고딕,9,0,0,0,0" titlebar_font="맑은 고딕,9,1,0,0,0" on_itemdestroy="eventfunc:tabScreen_on_itemdestroy(objInst, itemindex)" on_itemchange="eventfunc:tabScreen_on_itemchange(objInst, itemindex)">
+		</tab>
+	</map>
+</map_list>

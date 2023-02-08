@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" type="text/css" href="./xf_map.css" />
+
+    <script type="text/javascript" src="../ext/lib/jquery-2.1.4.min.js"></script>
+
+    <script type="text/javascript" src="./xf_map.js"></script>
+
+    <!--
+    <script src="http://apis.daum.net/maps/maps3.js?apikey=2c686636eab09e459f5f134deb540658"></script>
+    -->
+    <!-- mjhong@empal user key -->
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=13574e0c66c8f2f43fd8961d55bd2560"></script>
+
+    <script type="text/javascript">
+        // call by external xf_map component
+        function create_map(xf_parent_map) {
+            return new XF_MAP(xf_parent_map);
+        }
+    </script>
+  	<title>MAP</title>
+</head>
+<body>
+    <div id="xf_map" class="_xf_map">
+    </div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" type="text/css" href="./xf_map.css" />
+
+    <script type="text/javascript" src="../ext/lib/jquery-2.1.4.min.js"></script>
+
+    <script type="text/javascript" src="./xf_map.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
+
+    <script type="text/javascript">
+        // call by external xf_map component
+        function create_map(xf_parent_map) {
+            return new XF_MAP(xf_parent_map);
+        }
+    </script>
+  	<title>MAP</title>
+</head>
+<body>
+    <div id="xf_map" class="_xf_map">
+    </div>
+</body>
+</html>

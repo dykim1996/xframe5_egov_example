@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<map_list>
+	<map>
+		<screen version="2.0" scriptcode="java" title="회원관리" directory="/guide/" screenid="empSelect" last_update_date="2023-02-08 14:16:20" width="1250" width_type="0" height="700" height_type="0" vertscrollbar_style="0" horzscrollbar_style="0" on_load="eventfunc:screen_on_load()" on_activate="eventfunc:screen_on_activate()" on_destroy="eventfunc:screen_on_destroy()" on_submitcomplete="eventfunc:screen_on_submitcomplete(mapid, result, recv_userheader, recv_code, recv_msg)" funclist="screen_on_load,empList_on_itemdblclick,screen_on_activate,btn_regist_on_mouseup,btn_search_on_mouseup"/>
+		<xlinkdataset id="DS_REQ" desc="조회" columns="emp_no::10::;emp_name::180::;emp_gender::40::;emp_addr::400::;emp_birth::19::;emp_phone::180::;emp_email::400::;emp_delete::40::"/>
+		<xlinkdataset id="DS_DETAILREQ" desc="상세조회" columns="emp_no::10::;emp_name::180::;emp_gender::40::;emp_addr::400::;emp_birth::19::;emp_phone::180::;emp_email::400::;emp_delete::40::"/>
+		<xlinktranmap id="TR_SELECT" url="sample/select.do" comment="조회">
+			<xtds id="DS_REQ" in_op="" out_op="DELETE" info="emp_no::1;emp_name::1;emp_gender::1;emp_addr::1;emp_birth::1;emp_phone::1;emp_email::1;emp_delete::1"/>
+		</xlinktranmap>
+		<xlinktranmap id="TR_DETAILSELECT" url="sample/detailSelect.do" comment="상세조회">
+			<xtds id="DS_DETAILREQ" in_op="ALL" out_op="DELETE" info="emp_no:1:1;emp_name::1;emp_gender::1;emp_addr::1;emp_birth::1;emp_phone::1;emp_email::1;emp_delete::1"/>
+		</xlinktranmap>
+		<xlinktranmap id="TR_SEARCH" url="sample/search.do" comment="검색">
+			<xtds id="DS_REQ" in_op="ALL" out_op="DELETE" info="emp_no::1;emp_name:1:1;emp_gender::1;emp_addr::1;emp_birth::1;emp_phone::1;emp_email::1;emp_delete::1"/>
+		</xlinktranmap>
+		<tab_order order_option="0" order_info="6,7,2,3"/>
+		<text control_id="1" autosize="0" x="210" y="138" right="932" bottom="532" width="108" height="30" text="회원목록" font="맑은 고딕,14,1,0,0,0" version="1.1"/>
+		<grid control_id="2" name="empList" x="210" y="192" right="165" bottom="208" width="875" width_percent="70" width_unit="1" height="300" margin="100,0,0,0" font="맑은 고딕,9,0,0,0,0" header_forecolor="00FF860E" header_backcolor="00FFFFFF" header_font="맑은 고딕,12,1,0,0,0" header_vertcount="0" header_height="30" cell_height="30" cell_dividerowcount="0" cell_dividecolor="00FFCFA0" cell_linecolor="00FFFFFF" cell_linecolor_horzuse="1" cell_linecolor_horz="00FFC957" cell_linecolor_vert="00C6FF0E" border="0" selectrow_font="맑은 고딕,9,0,0,0,0" selectcell_font="맑은 고딕,9,0,0,0,0" header_rightbar_color="00FFFFFF" scrollbar_button_hidden="1" horzscrollbar_style="0" link_data="DS_REQ" samplerows="20" fixedcols="7" version="1.2" on_itemdblclick="eventfunc:empList_on_itemdblclick(objInst, nDblClickRow, nDblClickColumn, bBtnClick, nImgIndex, strImgUrl)" on_itemvaluechanged="eventfunc:empList_on_itemvaluechanged(objInst, nRow, nColumn, strPrevItemText, strItemText)">
+			<column>
+				<header meta_id="emp_no" title="번호"/>
+				<data name="emp_no" description="회원번호" width="58" text_horzalign="1" font="함초롬바탕,10,1,0,0,0" link_data="DS_REQ:emp_no" bargauge_transparent="0"/>
+			</column>
+			<column>
+				<header title="이름" backcolor="00FFFFFF"/>
+				<data name="emp_name" description="이름" width="109" text_horzalign="1" font="함초롬바탕,10,1,0,0,0" data_type="2" link_data="DS_REQ:emp_name" bargauge_transparent="0"/>
+			</column>
+			<column>
+				<header title="성별"/>
+				<data name="emp_gender" description="성별" width="81" text_horzalign="1" font="함초롬바탕,10,1,0,0,0" link_data="DS_REQ:emp_gender" bargauge_transparent="0"/>
+			</column>
+			<column>
+				<header title="주소"/>
+				<data name="emp_addr" description="주소" width="172" text_horzalign="1" font="함초롬바탕,10,1,0,0,0" link_data="DS_REQ:emp_addr" bargauge_transparent="0"/>
+			</column>
+			<column>
+				<header title="이메일"/>
+				<data name="emp_email" description="이메일" width="137" text_horzalign="1" font="함초롬바탕,10,1,0,0,0" link_data="DS_REQ:emp_email" bargauge_transparent="0"/>
+			</column>
+			<column>
+				<header title="생년월일"/>
+				<data name="emp_birth" description="생년월일" width="112" text_horzalign="1" font="함초롬바탕,10,1,0,0,0" link_data="DS_REQ:emp_birth" bargauge_transparent="0"/>
+			</column>
+			<column>
+				<header title="전화번호"/>
+				<data name="emp_phone" width="165" text_horzalign="1" font="함초롬바탕,10,1,0,0,0" link_data="DS_REQ:emp_phone" bargauge_transparent="0"/>
+			</column>
+			<headermegeinfo info=""/>
+		</grid>
+		<pushbutton control_id="3" name="btn_regist" x="942" y="516" right="212" bottom="154" width="96" height="30" style_class="0" text="회원 등록" font="맑은 고딕,12,1,0,0,0" fore_color="00FFFFFF" back_color="00FF5757" border_color="00FFFFFF" border_radius="15" hover_font="맑은 고딕,9,0,0,0,0" version="1.1" on_mouseup="eventfunc:btn_regist_on_mouseup(objInst)"/>
+		<text control_id="4" autosize="0" x="522" y="37" right="548" bottom="603" width="180" height="60" text="회원 관리" font="맑은 고딕,24,1,0,0,0" version="1.1"/>
+		<pushbutton control_id="6" name="btn_search" x="960" y="138" right="194" bottom="532" width="96" height="30" style_class="0" text="검색" font="맑은 고딕,12,1,0,0,0" fore_color="00FFFFFF" back_color="00878787" border_color="00FFFFFF" border_radius="15" hover_font="맑은 고딕,9,0,0,0,0" version="1.1" on_mouseup="eventfunc:btn_search_on_mouseup(objInst)"/>
+		<hangul_field control_id="7" name="fld_name" autosize="0" x="804" y="142" right="298" bottom="535" width="148" height="23" font="맑은 고딕,9,0,0,0,0"/>
+	</map>
+</map_list>

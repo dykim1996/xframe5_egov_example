@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<map_list>
+	<map>
+		<screen version="2.0" scriptcode="java" title="업데이트샘플" screenid="xdataset5UpdateSample" screen_capture="0" last_update_date="2023-01-17 17:55:08" width="700" width_type="0" height="800" height_type="0" canvas_width="1400" canvas_height="1600" on_submitcomplete="eventfunc:screen_on_submitcomplete(mapid, result, recv_userheader, recv_code, recv_msg)" funclist="screen_on_submitcomplete,btn_search_on_mouseup,btn_updateUtil_on_mouseup,btn_insert_on_mouseup,btn_delete_on_mouseup,fldEmpAge_on_keydown"/>
+		<xlinkdataset id="DS_REQ" desc="조회기준 데이터셋" columns="EMP_NO:&quot;직원번호&quot;:6:&quot;&#x0A;&quot;:;EMP_NAME:&quot;직원이름&quot;:20::;EMP_AGE:&quot;직원나이&quot;:10::"/>
+		<xlinkdataset id="DS_RES" desc="직원정보 Case1" columns="EMP_NO:&quot;직원번호&quot;:6::;EMP_NAME:&quot;직원이름&quot;:20::;EMP_AGE:&quot;직원나이&quot;:10::;DEPT_CODE:&quot;부서코드&quot;:2::;TITLE_CODE:&quot;직급코드&quot;:2::;MAIL_ADDR:&quot;메일주소&quot;:100::;PROCESS_RESULT:&quot;처리결과&quot;:30::"/>
+		<xlinkdataset id="DS_RES_MAP" desc="직원정보 Case2" columns="EMP_NO:&quot;직원번호&quot;:6::;EMP_NAME:&quot;직원이름&quot;:20::;EMP_AGE:&quot;직원나이&quot;:10::;DEPT_CODE:&quot;부서코드&quot;:2::;TITLE_CODE:&quot;직급코드&quot;:2::;MAIL_ADDR:&quot;메일주소&quot;:100::;PROCESS_RESULT:&quot;처리결과&quot;:30::"/>
+		<xlinkdataset id="DS_RES_VO" desc="직원정보 Case3" columns="EMP_NO:&quot;직원번호&quot;:6::;EMP_NAME:&quot;직원이름&quot;:20::;EMP_AGE:&quot;직원나이&quot;:10::;DEPT_CODE:&quot;부서코드&quot;:2::;TITLE_CODE:&quot;직급코드&quot;:2::;MAIL_ADDR:&quot;메일주소&quot;:100::;PROCESS_RESULT:&quot;처리결과&quot;:30::"/>
+		<xlinkdataset id="DS_CBO_DEPT" desc="부서정보" columns="dept_code:&quot;부서코드&quot;:2:&quot;01&#x0A;02&#x0A;03&#x0A;04&#x0A;05&#x0A;&quot;:;dept_name:&quot;부서이름&quot;:29:&quot;총무부&#x0A;기획부&#x0A;재무부&#x0A;영업부&#x0A;구매부&#x0A;&quot;:"/>
+		<xlinkdataset id="DS_CBO_TITLE" desc="직책정보" columns="title_code:&quot;직책코드&quot;:2:&quot;01&#x0A;02&#x0A;03&#x0A;04&#x0A;05&#x0A;&quot;:;title_name:&quot;직책이름&quot;:30:&quot;사원&#x0A;대리&#x0A;과장&#x0A;차장&#x0A;부장&#x0A;&quot;:"/>
+		<xlinktranmap id="TR_SELECT" url="sample/selectView.do" comment="조회">
+			<xtds id="DS_REQ" in_op="ALL" out_op="" info="EMP_NO:1:;EMP_NAME:1:;EMP_AGE:1:"/>
+			<xtds id="DS_RES" in_op="" out_op="DELETE" info="EMP_NO::1;EMP_NAME::1;EMP_AGE::1;DEPT_CODE::1;TITLE_CODE::1;MAIL_ADDR::1;PROCESS_RESULT::1"/>
+			<xtds id="DS_RES_MAP" in_op="" out_op="DELETE" info="EMP_NO::1;EMP_NAME::1;EMP_AGE::1;DEPT_CODE::1;TITLE_CODE::1;MAIL_ADDR::1;PROCESS_RESULT::1"/>
+			<xtds id="DS_RES_VO" in_op="" out_op="DELETE" info="EMP_NO::1;EMP_NAME::1;EMP_AGE::1;DEPT_CODE::1;TITLE_CODE::1;MAIL_ADDR::1;PROCESS_RESULT::1"/>
+		</xlinktranmap>
+		<xlinktranmap id="TR_UPDATE_UTIL" url="sample/updateView.do" comment="업데이트(유틸사용)">
+			<xtds id="DS_RES" in_op="UPDATE" out_op="" info="EMP_NO:1:;EMP_NAME:1:;EMP_AGE:1:;DEPT_CODE:1:;TITLE_CODE:1:;MAIL_ADDR:1:;PROCESS_RESULT::"/>
+		</xlinktranmap>
+		<tab_order order_option="0" order_info="76,89,91,114,69,79,81,78,87,46,14,54,15,50,52,18,75,19,21,20"/>
+		<rectangle style="box_tbl" control_id="94" x="30" y="414" right="28" bottom="224" width="642" height="162" font="맑은 고딕,9,0,0,0,0" back_color="00F8F4F2" border_color="00DBDBDB" transparent="0"/>
+		<rectangle style="box_tbl" control_id="0" x="30" y="18" right="28" bottom="734" width="642" height="48" font="맑은 고딕,9,0,0,0,0" back_color="00F8F4F2" border_color="00DBDBDB" transparent="0"/>
+		<caption style="txt_basic" control_id="2" autosize="0" x="42" y="30" right="592" bottom="746" width="66" height="24" text="직원번호" font="맑은 고딕,10,1,0,0,0" fore_color="00222222" back_color="00F4F4F4" back_color_opacity="0" transparent="1" mousehover_font="맑은 고딕,9,0,0,0,0" flowline_arr=""/>
+		<combobox control_id="15" autosize="0" x="444" y="486" right="76" bottom="290" width="180" height="24" font="맑은 고딕,9,0,0,0,0" fore_color="00222222" border_color="00D0CDCA" text_margin="5,1,1,1" picklist_linkdata="DS_CBO_TITLE:title_code:title_name:" link_data="DS_RES:TITLE_CODE" input_type="1" editable="0" picklist_font="굴림체,9,0,0,0,0" picklist_selstyle="1" version="1.1"/>
+		<combobox control_id="14" name="combo_dep" autosize="0" x="444" y="450" right="76" bottom="326" width="180" height="24" font="맑은 고딕,9,0,0,0,0" fore_color="00222222" border_color="00D0CDCA" text_margin="5,1,1,1" picklist_linkdata="DS_CBO_DEPT:dept_code:dept_name:" link_data="DS_RES:DEPT_CODE" editable="0" picklist_font="맑은 고딕,9,0,0,0,0" picklist_selstyle="1" version="1.1"/>
+		<normal_field control_id="46" description="직원번호" autosize="0" x="141" y="450" right="430" bottom="326" width="129" height="24" font="맑은 고딕,9,0,0,0,0" fore_color="00222222" border_color="00D0CDCA" text_margin="5,1,1,1" link_data="DS_RES:EMP_NO" max_length="6"/>
+		<normal_field control_id="50" description="직원나이" autosize="0" x="141" y="522" right="430" bottom="254" width="129" height="24" font="맑은 고딕,9,0,0,0,0" fore_color="00222222" border_color="00D0CDCA" text_margin="5,1,1,1" link_data="DS_RES:EMP_AGE" max_length="10"/>
+		<normal_field control_id="52" description="메일주소" autosize="0" x="444" y="522" right="76" bottom="254" width="180" height="24" font="맑은 고딕,9,0,0,0,0" fore_color="00222222" border_color="00D0CDCA" text_margin="5,1,1,1" link_data="DS_RES:MAIL_ADDR" max_length="100"/>
+		<hangul_field control_id="54" description="직원이름" x="141" y="486" right="431" bottom="290" width="128" height="24" font="맑은 고딕,9,0,0,0,0" fore_color="00222222" border_color="00D0CDCA" text_margin="5,1,1,1" link_data="DS_RES:EMP_NAME" max_length="20"/>
+		<pushbutton control_id="78" name="btn_updateUtil" x="582" y="72" right="28" bottom="704" width="90" height="24" style_class="3" text="저장" font="맑은 고딕,10,1,0,0,0" border_color="00C3C3C3" border_radius="6" gradient_endcolor="0057FF57" hover_font="맑은 고딕,9,0,0,0,0" version="1.1" on_mouseup="eventfunc:btn_updateUtil_on_mouseup(objinst)"/>
+		<pushbutton control_id="79" name="btn_insert" x="390" y="72" right="220" bottom="704" width="90" height="24" style_class="3" text="추가" font="맑은 고딕,10,1,0,0,0" border_color="00C3C3C3" border_radius="6" gradient_endcolor="0057FF57" hover_font="맑은 고딕,9,0,0,0,0" version="1.1" on_mouseup="eventfunc:btn_insert_on_mouseup(objInst)"/>
+		<pushbutton control_id="81" name="btn_delete" x="486" y="72" right="124" bottom="704" width="90" height="24" style_class="6" text="삭제" font="맑은 고딕,10,1,0,0,0" border_color="00C3C3C3" border_radius="6" gradient_endcolor="0057FF57" hover_font="맑은 고딕,9,0,0,0,0" version="1.1" on_mouseup="eventfunc:btn_delete_on_mouseup(objInst)"/>
+		<grid style="grid_basic" control_id="87" name="grid" description="직원정보" x="30" y="108" right="28" bottom="404" width="642" height="288" font="맑은 고딕,10,0,0,0,0" fore_color="00222222" header_forecolor="00222222" header_backcolor="00F6F6F6" header_font="맑은 고딕,10,1,0,0,0" header_vertcount="0" header_height="26" cell_height="24" cell_textmargin="5,5,0,0" cell_dividerowcount="1" cell_linecolor="00E8E5E4" border_ex="0,1,00B4B4B4,,0,,0,0,1,0,00FFFFFF,00E1E1E1^1,2,0025140A,1^0,1,00B4B4B4,1^0,1,00B4B4B4,1^0,1,00B4B4B4,1" selectrow_backcolor="00789AFC" selectrow_font="굴림체,9,0,0,0,0" selectcell_backcolor="00789AFC" selectcell_font="굴림체,9,0,0,0,0" header_clicksort="1" gradient_effect="1" gradient_startcolor="00F6F6F6" gradient_endcolor="00F6F6F6" linenumber_show="1" linenumber_title="No" linenumber_hd_forecolor="00222222" linenumber_forecolor="00222222" linenumber_backcolor="00FFFFFF" linenumber_style="1" use_checkrow="1" multi_checkrow="1" checkrow_width="24" link_data="DS_RES" column_moveable="1" version="1.2">
+			<column>
+				<header title="직원번호"/>
+				<data name="EMP_NO" description="직원번호" width="84" editable="1" max_length="6" link_data="DS_RES:EMP_NO" combobox_buttonsize="15" bargauge_transparent="0"/>
+			</column>
+			<column>
+				<header title="직원이름"/>
+				<data name="EMP_NAME" description="직원이름" width="116" editable="1" data_type="2" max_length="20" link_data="DS_RES:EMP_NAME" combobox_buttonsize="15" bargauge_transparent="0"/>
+			</column>
+			<column>
+				<header title="직원나이"/>
+				<data name="EMP_AGE" description="직원나이" width="65" editable="1" max_length="10" link_data="DS_RES:EMP_AGE" combobox_buttonsize="15" bargauge_transparent="0"/>
+			</column>
+			<column>
+				<header title="부서코드"/>
+				<data name="DEPT_CODE" description="부서코드" width="116" editable="1" input_type="2" max_length="2" link_data="DS_RES:DEPT_CODE" picklist_linkdata="DS_CBO_DEPT:dept_code:dept_name:" combobox_buttonsize="15" picklist_selstyle="1" bargauge_transparent="0"/>
+			</column>
+			<column>
+				<header title="직급코드"/>
+				<data name="TITLE_CODE" description="직급코드" width="121" editable="1" input_type="2" max_length="2" link_data="DS_RES:TITLE_CODE" picklist_linkdata="DS_CBO_TITLE:title_code:title_name:" combobox_buttonsize="15" picklist_selstyle="1" bargauge_transparent="0"/>
+			</column>
+			<column>
+				<header title="메일주소"/>
+				<data name="MAIL_ADDR" description="메일주소" width="288" editable="1" max_length="100" link_data="DS_RES:MAIL_ADDR" combobox_buttonsize="15" bargauge_transparent="0"/>
+			</column>
+			<column>
+				<header title="처리결과"/>
+				<data name="PROCESS_RESULT" description="처리결과" width="195" editable="1" max_length="30" link_data="DS_RES:PROCESS_RESULT" combobox_buttonsize="15" bargauge_transparent="0"/>
+			</column>
+			<headermegeinfo info=""/>
+		</grid>
+		<numericex_field control_id="76" name="fldEmpNo" x="114" y="30" right="473" bottom="746" width="113" height="24" font="맑은 고딕,9,0,0,0,0" fore_color="00222222" border_color="00D0CDCA" text_margin="5,1,1,1" link_data="DS_REQ:EMP_NO" on_keydown="eventfunc:fldEmpAge_on_keydown(objInst, keycode, bctrldown, bshiftdown, baltdown, bnumpadkey)"/>
+		<pushbutton control_id="69" name="btn_search" x="294" y="72" right="316" bottom="704" width="90" height="24" style_class="2" text="조회" font="맑은 고딕,10,1,0,0,0" border_color="00C3C3C3" border_radius="6" gradient_endcolor="0057FF57" hover_font="맑은 고딕,9,0,0,0,0" version="1.1" on_mouseup="eventfunc:btn_search_on_mouseup(objInst)"/>
+		<numericex_field control_id="91" name="fldEmpAge" autosize="0" x="528" y="30" right="52" bottom="746" width="120" height="24" font="맑은 고딕,9,0,0,0,0" fore_color="00222222" border_color="00D0CDCA" text_margin="5,1,1,1" link_data="DS_REQ:EMP_AGE" max_length="30" on_keydown="eventfunc:fldEmpAge_on_keydown(objInst, keycode, bctrldown, bshiftdown, baltdown, bnumpadkey)"/>
+		<text control_id="17" autosize="0" x="36" y="624" right="574" bottom="152" width="90" height="24" text="mapid" font="맑은 고딕,10,1,0,0,0" fore_color="00222222" back_color="00F4F4F4" horz_align="2" mousehover_font="맑은 고딕,9,0,0,0,0" version="1.1"/>
+		<hangul_field control_id="18" name="fldMapId" autosize="0" x="138" y="624" right="382" bottom="152" width="180" height="24" font="맑은 고딕,9,0,0,0,0" fore_color="00222222" border_color="00D0CDCA" text_margin="5,1,1,1" input_type="2"/>
+		<hangul_field control_id="19" name="fldResult" autosize="0" x="138" y="660" right="382" bottom="116" width="180" height="24" font="맑은 고딕,9,0,0,0,0" fore_color="00222222" border_color="00D0CDCA" text_margin="5,1,1,1" input_type="2"/>
+		<hangul_field control_id="20" name="fldRecvCode" autosize="0" x="138" y="696" right="382" bottom="80" width="180" height="24" font="맑은 고딕,9,0,0,0,0" fore_color="00222222" border_color="00D0CDCA" text_margin="5,1,1,1" input_type="2"/>
+		<multiline control_id="21" name="mulRecvMsg" x="444" y="660" right="76" bottom="80" width="180" height="60" font="굴림체,9,0,0,0,0" border_color="00D0CDCA" line_gap="0" max_length="200" meta_maxlength="" input_type="2" escape_newline="0"/>
+		<text control_id="35" autosize="0" x="36" y="660" right="574" bottom="116" width="90" height="24" text="result" font="맑은 고딕,10,1,0,0,0" fore_color="00222222" back_color="00F4F4F4" horz_align="2" mousehover_font="맑은 고딕,9,0,0,0,0" version="1.1"/>
+		<text control_id="36" autosize="0" x="36" y="696" right="574" bottom="80" width="90" height="24" text="recv_code" font="맑은 고딕,10,1,0,0,0" fore_color="00222222" back_color="00F4F4F4" back_color_opacity="0" horz_align="2" mousehover_font="맑은 고딕,9,0,0,0,0" version="1.1"/>
+		<text control_id="37" autosize="0" x="378" y="654" right="265" bottom="122" width="57" height="24" text="recv_msg" font="맑은 고딕,10,1,0,0,0" fore_color="00222222" back_color="00F4F4F4" horz_align="2" mousehover_font="맑은 고딕,9,0,0,0,0" version="1.1"/>
+		<text control_id="74" autosize="0" x="336" y="624" right="265" bottom="152" width="99" height="24" text="recv_userheader" font="맑은 고딕,10,1,0,0,0" fore_color="00222222" back_color="00F4F4F4" horz_align="2" mousehover_font="맑은 고딕,9,0,0,0,0" version="1.1"/>
+		<hangul_field control_id="75" name="fldUserHeader" autosize="0" x="444" y="624" right="76" bottom="152" width="180" height="24" font="맑은 고딕,9,0,0,0,0" fore_color="00222222" border_color="00D0CDCA" text_margin="5,1,1,1" input_type="2"/>
+		<hangul_field control_id="89" name="fldEmpName" autosize="0" x="312" y="30" right="268" bottom="746" width="120" height="24" font="맑은 고딕,9,0,0,0,0" fore_color="00222222" border_color="00D0CDCA" text_margin="5,1,1,1" link_data="DS_REQ:EMP_NAME" on_keydown="eventfunc:fldEmpAge_on_keydown(objInst, keycode, bctrldown, bshiftdown, baltdown, bnumpadkey)"/>
+		<caption style="txt_basic" control_id="92" autosize="0" x="246" y="30" right="388" bottom="746" width="66" height="24" text="직원이름" font="맑은 고딕,10,1,0,0,0" fore_color="00222222" back_color="00F4F4F4" back_color_opacity="0" transparent="1" mousehover_font="맑은 고딕,9,0,0,0,0" flowline_arr=""/>
+		<caption style="txt_basic" control_id="93" autosize="0" x="456" y="30" right="178" bottom="746" width="66" height="24" text="직원나이" font="맑은 고딕,10,1,0,0,0" fore_color="00222222" back_color="00F4F4F4" back_color_opacity="0" transparent="1" mousehover_font="맑은 고딕,9,0,0,0,0" flowline_arr=""/>
+		<caption style="txt_basic" control_id="95" autosize="0" x="36" y="450" right="574" bottom="326" width="90" height="24" text="직원번호" font="맑은 고딕,10,1,0,0,0" fore_color="00222222" back_color="00F4F4F4" back_color_opacity="0" transparent="1" horz_align="2" mousehover_font="맑은 고딕,9,0,0,0,0" flowline_arr=""/>
+		<caption style="txt_basic" control_id="96" autosize="0" x="36" y="486" right="574" bottom="290" width="90" height="24" text="직원이름" font="맑은 고딕,10,1,0,0,0" fore_color="00222222" back_color="00F4F4F4" back_color_opacity="0" transparent="1" horz_align="2" mousehover_font="맑은 고딕,9,0,0,0,0" flowline_arr=""/>
+		<caption style="txt_basic" control_id="97" autosize="0" x="36" y="522" right="574" bottom="254" width="90" height="24" text="직원나이" font="맑은 고딕,10,1,0,0,0" fore_color="00222222" back_color="00F4F4F4" back_color_opacity="0" transparent="1" horz_align="2" mousehover_font="맑은 고딕,9,0,0,0,0" flowline_arr=""/>
+		<caption style="txt_basic" control_id="98" autosize="0" x="348" y="450" right="262" bottom="326" width="90" height="24" text="직원부서" font="맑은 고딕,10,1,0,0,0" fore_color="00222222" back_color="00F4F4F4" back_color_opacity="0" transparent="1" horz_align="2" mousehover_font="맑은 고딕,9,0,0,0,0" flowline_arr=""/>
+		<caption style="txt_basic" control_id="99" autosize="0" x="348" y="486" right="262" bottom="290" width="90" height="24" text="직원직책" font="맑은 고딕,10,1,0,0,0" fore_color="00222222" back_color="00F4F4F4" back_color_opacity="0" transparent="1" horz_align="2" mousehover_font="맑은 고딕,9,0,0,0,0" flowline_arr=""/>
+		<caption style="txt_basic" control_id="100" autosize="0" x="348" y="522" right="262" bottom="254" width="90" height="24" text="메일주소" font="맑은 고딕,10,1,0,0,0" fore_color="00222222" back_color="00F4F4F4" back_color_opacity="0" transparent="1" horz_align="2" mousehover_font="맑은 고딕,9,0,0,0,0" flowline_arr=""/>
+		<caption style="txt_basic" control_id="101" autosize="0" x="42" y="420" right="592" bottom="356" width="66" height="24" text="직원 정보 " font="맑은 고딕,10,1,0,0,0" fore_color="00222222" back_color="00F4F4F4" back_color_opacity="0" transparent="1" mousehover_font="맑은 고딕,9,0,0,0,0" flowline_arr=""/>
+		<rectangle style="box_tbl" control_id="102" x="30" y="588" right="28" bottom="56" width="642" height="156" font="맑은 고딕,9,0,0,0,0" back_color="00F8F4F2" border_color="00DBDBDB" transparent="0"/>
+		<caption style="txt_basic" control_id="103" autosize="0" x="36" y="594" right="556" bottom="182" width="108" height="24" text="거래 처리 결과" font="맑은 고딕,10,1,0,0,0" fore_color="00222222" back_color="00F4F4F4" back_color_opacity="0" transparent="1" mousehover_font="맑은 고딕,9,0,0,0,0" flowline_arr=""/>
+		<pushbutton control_id="114" x="198" y="72" right="402" bottom="702" width="100" height="26" font="맑은 고딕,9,0,0,0,0" hover_font="맑은 고딕,9,0,0,0,0" version="1.1"/>
+		<hidden_screen>
+			<tab control_id="106" x="714" y="84" right="44" bottom="1204" width="642" height="312" font="맑은 고딕,9,0,0,0,0" tabitem_width="120" tabitem_font="맑은 고딕,9,0,0,0,0" tabitem_selfont="맑은 고딕,9,0,0,0,0" titlebar_font="맑은 고딕,9,1,0,0,0">
+				<tab_item title="기본조회결과" width="120" panel_color="00EBEBEB">
+					<grid style="grid_basic" control_id="107" name="gridBasic" description="직원정보" x="-2" y="0" right="0" bottom="0" width="642" height="288" height_unit="1" font="맑은 고딕,10,0,0,0,0" fore_color="00222222" header_forecolor="00222222" header_backcolor="00F6F6F6" header_font="맑은 고딕,10,1,0,0,0" header_vertcount="0" header_height="26" cell_height="24" cell_textmargin="5,5,0,0" cell_dividerowcount="1" cell_linecolor="00E8E5E4" border_ex="0,1,00B4B4B4,,0,,0,0,1,0,00FFFFFF,00E1E1E1^1,2,0025140A,1^0,1,00B4B4B4,1^0,1,00B4B4B4,1^0,1,00B4B4B4,1" selectrow_backcolor="00789AFC" selectrow_font="굴림체,9,0,0,0,0" selectcell_backcolor="00789AFC" selectcell_font="굴림체,9,0,0,0,0" header_clicksort="1" gradient_effect="1" gradient_startcolor="00F6F6F6" gradient_endcolor="00F6F6F6" linenumber_show="1" linenumber_title="No" linenumber_hd_forecolor="00222222" linenumber_forecolor="00222222" linenumber_backcolor="00FFFFFF" linenumber_style="1" multi_checkrow="1" checkrow_width="24" link_data="DS_RES" column_moveable="1" version="1.2">
+						<column>
+							<header title="직원번호"/>
+							<data name="EMP_NO" description="직원번호" width="84" editable="1" max_length="6" link_data="DS_RES:EMP_NO" combobox_buttonsize="15" bargauge_transparent="0"/>
+						</column>
+						<column>
+							<header title="직원이름"/>
+							<data name="EMP_NAME" description="직원이름" width="116" editable="1" data_type="2" max_length="20" link_data="DS_RES:EMP_NAME" combobox_buttonsize="15" bargauge_transparent="0"/>
+						</column>
+						<column>
+							<header title="직원나이"/>
+							<data name="EMP_AGE" description="직원나이" width="65" editable="1" max_length="10" link_data="DS_RES:EMP_AGE" combobox_buttonsize="15" bargauge_transparent="0"/>
+						</column>
+						<column>
+							<header title="부서코드"/>
+							<data name="DEPT_CODE" description="부서코드" width="116" editable="1" input_type="2" max_length="2" link_data="DS_RES:DEPT_CODE" picklist_linkdata="DS_CBO_DEPT:dept_code:dept_name:" combobox_buttonsize="15" picklist_selstyle="1" bargauge_transparent="0"/>
+						</column>
+						<column>
+							<header title="직급코드"/>
+							<data name="TITLE_CODE" description="직급코드" width="121" editable="1" input_type="2" max_length="2" link_data="DS_RES:TITLE_CODE" picklist_linkdata="DS_CBO_TITLE:title_code:title_name:" combobox_buttonsize="15" picklist_selstyle="1" bargauge_transparent="0"/>
+						</column>
+						<column>
+							<header title="메일주소"/>
+							<data name="MAIL_ADDR" description="메일주소" width="288" editable="1" max_length="100" link_data="DS_RES:MAIL_ADDR" combobox_buttonsize="15" bargauge_transparent="0"/>
+						</column>
+						<column>
+							<header title="처리결과"/>
+							<data name="PROCESS_RESULT" description="처리결과" width="195" editable="1" max_length="30" link_data="DS_RES:PROCESS_RESULT" combobox_buttonsize="15" bargauge_transparent="0"/>
+						</column>
+						<headermegeinfo info=""/>
+					</grid>
+				</tab_item>
+				<tab_item title="Map조회결과" width="120" panel_color="00EBEBEB">
+					<grid style="grid_basic" control_id="108" name="gridMap" description="직원정보" x="-2" y="0" right="0" bottom="0" width="642" height="288" height_unit="1" font="맑은 고딕,10,0,0,0,0" fore_color="00222222" header_forecolor="00222222" header_backcolor="00F6F6F6" header_font="맑은 고딕,10,1,0,0,0" header_vertcount="0" header_height="26" cell_height="24" cell_textmargin="5,5,0,0" cell_dividerowcount="1" cell_linecolor="00E8E5E4" border_ex="0,1,00B4B4B4,,0,,0,0,1,0,00FFFFFF,00E1E1E1^1,2,0025140A,1^0,1,00B4B4B4,1^0,1,00B4B4B4,1^0,1,00B4B4B4,1" selectrow_backcolor="00789AFC" selectrow_font="굴림체,9,0,0,0,0" selectcell_backcolor="00789AFC" selectcell_font="굴림체,9,0,0,0,0" header_clicksort="1" gradient_effect="1" gradient_startcolor="00F6F6F6" gradient_endcolor="00F6F6F6" linenumber_show="1" linenumber_title="No" linenumber_hd_forecolor="00222222" linenumber_forecolor="00222222" linenumber_backcolor="00FFFFFF" linenumber_style="1" multi_checkrow="1" checkrow_width="24" link_data="DS_RES_MAP" editable="0" column_moveable="1" version="1.2">
+						<column>
+							<header title="직원번호"/>
+							<data name="EMP_NO" description="직원번호" width="84" editable="1" max_length="6" link_data="DS_RES_MAP:EMP_NO" combobox_buttonsize="15" bargauge_transparent="0"/>
+						</column>
+						<column>
+							<header title="직원이름"/>
+							<data name="EMP_NAME" description="직원이름" width="116" editable="1" data_type="2" max_length="20" link_data="DS_RES_MAP:EMP_NAME" combobox_buttonsize="15" bargauge_transparent="0"/>
+						</column>
+						<column>
+							<header title="직원나이"/>
+							<data name="EMP_AGE" description="직원나이" width="65" editable="1" max_length="10" link_data="DS_RES_MAP:EMP_AGE" combobox_buttonsize="15" bargauge_transparent="0"/>
+						</column>
+						<column>
+							<header title="부서코드"/>
+							<data name="DEPT_CODE" description="부서코드" width="116" editable="1" input_type="2" max_length="2" link_data="DS_RES_MAP:DEPT_CODE" picklist_linkdata="DS_CBO_DEPT:dept_code:dept_name:" combobox_buttonsize="15" picklist_selstyle="1" bargauge_transparent="0"/>
+						</column>
+						<column>
+							<header title="직급코드"/>
+							<data name="TITLE_CODE" description="직급코드" width="121" editable="1" input_type="2" max_length="2" link_data="DS_RES_MAP:TITLE_CODE" picklist_linkdata="DS_CBO_TITLE:title_code:title_name:" combobox_buttonsize="15" picklist_selstyle="1" bargauge_transparent="0"/>
+						</column>
+						<column>
+							<header title="메일주소"/>
+							<data name="MAIL_ADDR" description="메일주소" width="288" editable="1" max_length="100" link_data="DS_RES_MAP:MAIL_ADDR" combobox_buttonsize="15" bargauge_transparent="0"/>
+						</column>
+						<column>
+							<header title="처리결과"/>
+							<data name="PROCESS_RESULT" description="처리결과" width="195" editable="1" max_length="30" link_data="DS_RES_MAP:PROCESS_RESULT" combobox_buttonsize="15" bargauge_transparent="0"/>
+						</column>
+						<headermegeinfo info=""/>
+					</grid>
+				</tab_item>
+				<tab_item title="VO조회결과" width="120" panel_color="00EBEBEB">
+					<grid style="grid_basic" control_id="111" name="gridVO" description="직원정보" x="-2" y="0" right="0" bottom="0" width="642" height="288" height_unit="1" font="맑은 고딕,10,0,0,0,0" fore_color="00222222" header_forecolor="00222222" header_backcolor="00F6F6F6" header_font="맑은 고딕,10,1,0,0,0" header_vertcount="0" header_height="26" cell_height="24" cell_textmargin="5,5,0,0" cell_dividerowcount="1" cell_linecolor="00E8E5E4" border_ex="0,1,00B4B4B4,,0,,0,0,1,0,00FFFFFF,00E1E1E1^1,2,0025140A,1^0,1,00B4B4B4,1^0,1,00B4B4B4,1^0,1,00B4B4B4,1" selectrow_backcolor="00789AFC" selectrow_font="굴림체,9,0,0,0,0" selectcell_backcolor="00789AFC" selectcell_font="굴림체,9,0,0,0,0" header_clicksort="1" gradient_effect="1" gradient_startcolor="00F6F6F6" gradient_endcolor="00F6F6F6" linenumber_show="1" linenumber_title="No" linenumber_hd_forecolor="00222222" linenumber_forecolor="00222222" linenumber_backcolor="00FFFFFF" linenumber_style="1" multi_checkrow="1" checkrow_width="24" link_data="DS_RES_VO" editable="0" column_moveable="1" version="1.2">
+						<column>
+							<header title="직원번호"/>
+							<data name="EMP_NO" description="직원번호" width="84" editable="1" max_length="6" link_data="DS_RES_VO:EMP_NO" combobox_buttonsize="15" bargauge_transparent="0"/>
+						</column>
+						<column>
+							<header title="직원이름"/>
+							<data name="EMP_NAME" description="직원이름" width="116" editable="1" data_type="2" max_length="20" link_data="DS_RES_VO:EMP_NAME" combobox_buttonsize="15" bargauge_transparent="0"/>
+						</column>
+						<column>
+							<header title="직원나이"/>
+							<data name="EMP_AGE" description="직원나이" width="65" editable="1" max_length="10" link_data="DS_RES_VO:EMP_AGE" combobox_buttonsize="15" bargauge_transparent="0"/>
+						</column>
+						<column>
+							<header title="부서코드"/>
+							<data name="DEPT_CODE" description="부서코드" width="116" editable="1" input_type="2" max_length="2" link_data="DS_RES_VO:DEPT_CODE" picklist_linkdata="DS_CBO_DEPT:dept_code:dept_name:" combobox_buttonsize="15" picklist_selstyle="1" bargauge_transparent="0"/>
+						</column>
+						<column>
+							<header title="직급코드"/>
+							<data name="TITLE_CODE" description="직급코드" width="121" editable="1" input_type="2" max_length="2" link_data="DS_RES_VO:TITLE_CODE" picklist_linkdata="DS_CBO_TITLE:title_code:title_name:" combobox_buttonsize="15" picklist_selstyle="1" bargauge_transparent="0"/>
+						</column>
+						<column>
+							<header title="메일주소"/>
+							<data name="MAIL_ADDR" description="메일주소" width="288" editable="1" max_length="100" link_data="DS_RES_VO:MAIL_ADDR" combobox_buttonsize="15" bargauge_transparent="0"/>
+						</column>
+						<column>
+							<header title="처리결과"/>
+							<data name="PROCESS_RESULT" description="처리결과" width="195" editable="1" max_length="30" link_data="DS_RES_VO:PROCESS_RESULT" combobox_buttonsize="15" bargauge_transparent="0"/>
+						</column>
+						<headermegeinfo info=""/>
+					</grid>
+				</tab_item>
+			</tab>
+		</hidden_screen>
+	</map>
+</map_list>
