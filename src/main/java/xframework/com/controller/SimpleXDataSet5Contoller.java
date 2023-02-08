@@ -94,6 +94,7 @@ public class SimpleXDataSet5Contoller {
 //		}
 //	}
 //	
+	/* 회원 목록 조회*/
 	@RequestMapping(value = "/sample/select.do")
 	public void simpleSelect(HttpServletRequest request, HttpServletResponse response, ModelMap model) {
 		

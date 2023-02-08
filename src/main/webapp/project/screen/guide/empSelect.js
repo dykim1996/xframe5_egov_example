@@ -60,8 +60,13 @@ function btn_search_on_mouseup(objInst)
 	DS_REQ.addrow();
 	
 	DS_REQ.setdata(0,1,fld_name.gettext());
-	console.log(DS_REQ);
+
  	screen.requestsubmit("TR_SEARCH",true);
  
 
+}
+
+function as_on_mouseup(objInst)
+{
+	empList.refresh();
 }
